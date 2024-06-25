@@ -5,37 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kenia Reis</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Preahvihear&display=swap');
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Preahvihear&display=swap');
+    </style>
 </head>
 <body>
-    <nav class="nav-bar"></nav>
-    <div class="home">
-        <h2>Olá! Sou a Kenia Reis</h2>
-        <h1>Desenvolveldora de Software</h1>
-        <p>
-            Diretora e Desenvolvedora de Software autodidata na Tech Júnior, responsável por gestão administrativa, 
-            financeira e desenvolvimento de software. Anteriormente, adquiri experiência na Agência Azure em 
-            marketing digital e análise de dados. Estudo Ciência da Computação no IFMA e estou focada em Java com Springboot.
-        </p>
-        <div class="btns">
-            <button class="cv-btn">Meu CV</button>
-            <button class="contact-btn">Contato</button>
-        </div>
-    </div>
-    <div class="projects">
-        <h1>Projetos e trabalhos</h1>
-    </div>
-    <div class="habilits">
-        <h1>Habilidades</h1>
-    </div>
-    <div class="contact">
-        <h2>Vamos conversar!</h2>
-        <p>
-            Atualmente, estou em busca de integrar uma equipe multifuncional que valorize a melhoria da vida das
-            pessoas através do desenvolvimento de software acessível e inovador. Se você tem um projeto em mente
-            ou gostaria de discutir como podemos colaborar, vamos nos conectar. Estou sempre aberta a novas 
-            oportunidades e parcerias.
-        </p>
+    <header>
+        <div><img src="assets/logo.svg" class="logo"></div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Projetos</a></li>
+                <li><a href="#">Habilidades</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#" class="lang-btn">PT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="intro-sec">
+            <div class="intro">
+                <div class="text-intro">
+                    <h2>Olá! Sou a <span class="gradient-text">Kenia Reis</span></h2>
+                    <h1>Desenvolveldora de Software</h1>
+                    <p>
+                        Diretora e Desenvolvedora de Software autodidata na Tech Júnior, responsável por gestão administrativa, 
+                        financeira e desenvolvimento de software. Anteriormente, adquiri experiência na Agência Azure em 
+                        marketing digital e análise de dados. Estudo Ciência da Computação no IFMA e estou focada em Java com Springboot.
+                    </p>
+                </div>
+                <div class="foto">
+                    <img src="assets/Imagem do WhatsApp de 2024-05-17 à(s) 08.27.46_5c721c52.jpg" alt="" class="circle-foto">
+                </div>
+            </div>
+            <div class="btns">
+                <button class="cv-btn">Meu CV</button>
+                <button class="contact-btn">Contato</button>
+            </div>    
+        </section>
+        <section class="projects">
+            <div class="projects-header">
+                <h1>Projetos e trabalhos</h1>
+            </div>
+        </section>
+        <section class="habilits">
+            <div class="habilits-header">
+                <h1>Habilidades</h1>
+            </div>
+        </section>
+    </main>
+        <div class="contact">
+            <h2>Vamos conversar!</h2>
+            <p>
+                Atualmente, estou em busca de integrar uma equipe multifuncional que valorize a melhoria da vida das
+                pessoas através do desenvolvimento de software acessível e inovador. Se você tem um projeto em mente
+                ou gostaria de discutir como podemos colaborar, vamos nos conectar. Estou sempre aberta a novas 
+                oportunidades e parcerias.
+            </p>
         <p>keniaolivereis@gmail.com</p>
     </div>
 </body>
+<footer>
+    <p>Copyright © Kenia Reis · 2024</p>
+</footer>
 </html>

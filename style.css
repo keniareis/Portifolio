@@ -1,22 +1,146 @@
 body {
+    margin: 0;
     background-color: #10002B;
     color: #ffffff;
 }
 
-.nav-bar{
-    display: inline-block;
-    color: #F5F6F6;
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 70px;
+    background-color: #10002B;
+    position: fixed;
+    width: 91%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+.logo{
+    width: 60px;
+    height: 35px;
 }
 
-.home {
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a{
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: "Heebo", sans-serif;
+    font-weight: normal;
+}
+
+nav .lang-btn{
+    background-color: #2E1459;
+    padding: 7px 10px;
+    border-radius: 5px;
+}
+
+main {
     display: flex;
     flex-direction: column;
     color: #ffffff;
+    padding-top: 80px; 
+}
+
+.intro {
+    display: flex;
+    flex-direction: row;
+    text-align: start;
+    margin-left: 140px;
+    font-family: "Preahvihear", sans-serif;
+    margin-top: 0;
+    margin-right: -10;
+}
+
+.text-intro {
+    max-width: 860px;
+}
+
+.intro h2{
+    font-size: 28px;
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-top: 110px;
+}
+
+.intro h2 span{
+    color: #AD50FF;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #E18FFE, #8A4AC9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;  
+    -webkit-text-fill-color: transparent;
+}
+
+.intro h1{
+    font-size: 48px;
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.intro p{
+    font-size: 16px;
+    font-weight: normal;
+    margin-right: 25%;
+    margin-bottom: 130px;
+}
+
+.foto  {
+    width: 390px;
+    height: 390px;
+    background-color: #2E1459;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.circle-foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .btns {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    
+    gap: 60px;
+    margin-bottom: 150px;
+}
+
+.cv-btn {
+    color: #fff;
+    background-color: #240046;
+    height: 45px;
+    width: 170px;
+    border: none;
+    border-radius: 15px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.contact-btn {
+    color: #ffffff;
+    background-color: #7B2BBE;
+    height: 45px;
+    width: 170px;
+    border: none;
+    border-radius: 15px;
+    font-size: 24px;
+    font-weight: bold
 }
