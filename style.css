@@ -8,7 +8,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 70px;
+    padding: 10px 70px;
     background-color: #10002B;
     position: fixed;
     width: 91%;
@@ -132,6 +132,7 @@ main {
     border-radius: 15px;
     font-size: 24px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .contact-btn {
@@ -142,5 +143,226 @@ main {
     border: none;
     border-radius: 15px;
     font-size: 24px;
-    font-weight: bold
+    font-weight: bold;
+    cursor: pointer;
 }
+
+.projects h1{
+    margin-top: 0;
+    margin-bottom: 10px;
+    display: flex;
+    font-size: 48px;
+    font-weight: lighter;
+    font-family: "Preahvihear", sans-serif;
+    margin-left: 80px;    
+}
+
+.projects{
+    margin-top: 0;
+
+    .cards{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 80px;
+        margin-right: 80px;
+        justify-content: center;
+        gap: 50px;
+
+        .first-column{
+            display: flex;
+            gap: 70px;
+            
+        }
+        
+        .second-column {
+            display: flex;
+            gap: 70px;
+        }
+    }
+
+
+
+    .card-01 {
+        border: 1px solid #452586;
+        border-radius: 10px;
+        width: 370px;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px;
+        color: white;
+        
+        .card-crud-image {
+            display: flex;
+            width: 370px;
+            border-radius: 10px;
+            
+        }
+    }
+    
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        font-family: "Raleway", sans-serif;
+        margin: -5px;
+        margin-bottom: -10px;
+        
+        .tittle{
+            h4{
+               margin: 0;
+               font-size: 14px; 
+               font-weight: bold;
+            }
+           p{
+               margin: 5px 0 0;
+               color: #888095;
+               margin-bottom: 0px;
+               font-size: 14px; 
+               font-weight: lighter;
+            }
+        }
+    
+        .info {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+    
+            .tag {
+                background-color: #1A073E;
+                border-radius: 5px;
+                padding: 3px 20px;
+                text-align: center;
+                color: #7B4AE2;
+                margin: 5px;
+                font-size: 12px; 
+                font-weight: 500;
+            }
+            
+            .more {
+                color: #888095;
+                text-decoration: none;
+                text-align: center;
+                margin: 0px;
+                font-size: 10px; 
+                font-weight: lighter;
+                margin-right: 10px;
+                margin-top: 10px;
+
+            }
+        }
+    }    
+}
+
+.habilits{
+    .habilits-header{
+        h1{
+            font-family: "Preahvihear", sans-serif;
+            font-size: 48px;
+            font-weight: lighter;
+            margin-left: 80px;    
+        }
+    }
+
+    .row-1{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 50px;
+        width: 100%;
+    }
+
+    .row-2{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 50px;
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    .card-container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        
+        .card-languages{
+            background-color: #240046;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100px;
+            height: 110px;
+            text-align: center;
+        }
+        .card-languages img {
+            width: 50px;
+            height: auto;
+            margin-top: 15px;
+        }
+        .card-languages h3 {
+            margin: 0;
+            margin-bottom: 15px;
+            font-family: "Preahvihear", sans-serif;
+            font-weight: lighter;
+            font-size: 15px;
+        }
+    }
+}
+
+.contact{
+    display: flex;
+    font-family: "Preahvihear", sans-serif;
+    flex-direction: column;
+    margin-top: 100px;
+
+    h2{
+        font-size: 24px;
+        font-weight: lighter;
+        margin-left: 350px;
+        padding-bottom: 0%;
+    }
+
+    p{
+        font-weight: lighter;
+        margin-left: 350px;
+        margin-right: 350px;
+        
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+    }
+
+    .imgs{
+        height: 63px;
+        display: flex;
+        flex-direction: row;
+        margin-left: 350px;
+        align-items:center;
+        margin-bottom: 100px;
+        
+        img{
+            height: 50px;
+            padding: 5px;
+        }
+
+
+    }
+}
+
+footer{
+    background-color: #1A073E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: small;
+    color: #8D839F;
+    height: 50px;
+}
+
+
+
