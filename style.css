@@ -146,10 +146,12 @@ main {
     font-weight: lighter;
     font-family: "Preahvihear", sans-serif;
     margin-left: 80px;    
+    justify-content: center;
 }
 
 .projects{
     margin-top: 0;
+
 
     .cards{
         display: flex;
