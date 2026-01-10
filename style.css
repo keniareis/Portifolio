@@ -179,8 +179,8 @@ main {
     .card-01 {
         border: 1px solid #452586;
         border-radius: 10px;
-        width: 370px;
-        height: 250px;
+        width: 570px;
+        height: 350px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -189,7 +189,7 @@ main {
 
         .card-crud-image {
             display: flex;
-            width: 370px;
+            width: 570px;
             border-radius: 10px;
 
         }
