@@ -491,37 +491,97 @@ footer{
     }
 
 }
+
 @media (max-width: 480px) {
+
+    /* GARANTIA CONTRA SCROLL HORIZONTAL */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* HEADER */
+    header {
+        padding: 10px 16px;
+    }
+
+    /* INTRO */
+    .intro {
+        margin-top: -40px;
+    }
+
     .intro h2 {
-        font-size: 20px;
+        font-size: 18px;
+        margin-top: 70px;
     }
 
     .intro h1 {
-        font-size: 28px;
+        font-size: 26px;
     }
 
+    .intro p {
+        margin-bottom: 50px;
+    }
+
+    /* FOTO */
+    .foto {
+        width: 150px;
+        height: 150px;
+        margin-top: -30px;
+    }
+
+    /* BOTÕES */
+    .btns {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .cv-btn,
+    .contact-btn {
+        width: 100%;
+        max-width: 260px;
+    }
+
+    /* PROJECTS */
+    .projects {
+        padding: 0 10px;
+    }
+
+    .projects .cards {
+        margin: 0;
+        padding: 0;
+    }
+
+    .projects .card-01 {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* IMAGENS E VÍDEOS */
+    .card-01 img,
+    .card-01 video {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* CONTACT */
     .contact {
-        align-items: center; 
-        text-align: center; 
-        margin: 0 10px; 
-    }
-
-    .contact h2 {
-        font-size: 20px;
-        margin-bottom: 10px;
+        margin-top: 60px;
     }
 
     .contact p {
-        margin: 0 10px; 
+        padding: 0 5px;
+        font-size: 14px;
     }
 
     .contact .imgs {
-        height: 63px;
-        justify-content: center;
-        margin: 10px 0;
+        margin-left: 0;
     }
 
-    .contact .imgs img {
-        height: 40px;
+    /* FOOTER */
+    footer {
+        font-size: 12px;
+        padding: 0 10px;
     }
 }
