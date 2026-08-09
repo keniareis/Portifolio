@@ -1,16 +1,35 @@
 import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import logo from '../assets/logo.svg';
 import { NAV_LINKS } from '../constants';
 
 const Navbar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [hidden, setHidden] = useState(false);
 
     const toggleMobileMenu = () => {
         setMobileMenuOpen((prev) => !prev);
     }
+
+    useEffect(() => {
+        let lastScrollY = window.scrollY;
+
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            setHidden(currentScrollY > lastScrollY && currentScrollY > 80);
+            lastScrollY = currentScrollY;
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-700/40">
+        <nav
+            className={`sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-700/40 transition-transform duration-300 ${
+                hidden && !mobileMenuOpen ? '-translate-y-full' : 'translate-y-0'
+            }`}
+        >
             <div className="container px-4 mx-auto relative text-sm">
                 <div className="flex justify-between items-center">
                     <div className="flex items-center flex-shrink-0 justify-center">
