@@ -1,10 +1,9 @@
-import React from 'react'
 import foto from '../assets/foto.jpg'
 import { FileText } from 'lucide-react'
 
 const HomeSection = () => {
   return (        
-    <section className="preahvihear-regular flex items-center gap-12 mt-20 px-6 lg:px-20 max-w-7xl mx-auto">
+    <section id="sobre" className="preahvihear-regular flex items-center gap-12 mt-20 px-6 lg:px-20 max-w-7xl mx-auto">
       <div className="max-w-xl">
         <p className="text-base mb-2">
             Olá! Sou a{' '}

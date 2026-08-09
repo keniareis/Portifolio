@@ -34,7 +34,7 @@ const Navbar = () => {
                     </div>
                 </div>
                 {mobileMenuOpen && (
-                    <div className="bg-[#300049] fixed right-0 z-20 bg-neutral-900 w-full p-12 flex flex-col items-center lg:hidden">
+                    <div className="bg-[#300049] fixed right-0 z-20 w-full p-12 flex flex-col items-center lg:hidden">
                         <ul>
                             {NAV_LINKS.map((item, index) => (
                                 <li key={index} className="py-2">
