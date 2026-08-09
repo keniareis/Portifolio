@@ -1,3 +1,14 @@
+import javaIcon from '../assets/java.png';
+import springIcon from '../assets/spring.png';
+import nodejsIcon from '../assets/nodejs.png';
+import kafkaIcon from '../assets/kafka-logo.png';
+import reactIcon from '../assets/React-icon.png';
+import flutterIcon from '../assets/flutter.png';
+import postgresIcon from '../assets/postgres.png';
+import mysqlIcon from '../assets/sql.png';
+import mongodbIcon from '../assets/mongodb-icon.svg';
+import dockerIcon from '../assets/docker.png';
+import gitIcon from '../assets/git.png';
 import sdcVideo from '../assets/Sdc.mp4';
 import alumniVideo from '../assets/alumni.mp4';
 import faltamaisVideo from '../assets/faltamais.mp4';
@@ -63,4 +74,20 @@ export const PROJECTS: Project[] = [
         tags: ["Java"],
         link: "https://github.com/keniareis/Chess-System",
     },
+];
+
+export type Skill = { name: string; icon: string };
+
+export const SKILLS: Skill[] = [
+    { name: "Java", icon: javaIcon },
+    { name: "Spring Boot", icon: springIcon },
+    { name: "NodeJs", icon: nodejsIcon },
+    { name: "Kafka", icon: kafkaIcon },
+    { name: "React", icon: reactIcon },
+    { name: "Flutter", icon: flutterIcon },
+    { name: "Postgres", icon: postgresIcon },
+    { name: "MySQL", icon: mysqlIcon },
+    { name: "MongoDB", icon: mongodbIcon },
+    { name: "Docker", icon: dockerIcon },
+    { name: "Git", icon: gitIcon },
 ];
