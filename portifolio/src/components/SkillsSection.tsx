@@ -1,8 +1,17 @@
 import { SKILLS } from '../constants';
+import { useInView } from '../hooks/useInView';
 
 const SkillsSection = () => {
+    const { ref, inView } = useInView<HTMLElement>();
+
     return (
-        <section id="habilidades" className="preahvihear-regular mt-32 px-6 lg:px-20 max-w-5xl mx-auto text-center">
+        <section
+            id="habilidades"
+            ref={ref}
+            className={`preahvihear-regular mt-32 px-6 lg:px-20 max-w-5xl mx-auto text-center transition-all duration-700 ${
+                inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+        >
             <h2 className="text-4xl font-bold text-white mb-10">Habilidades</h2>
             <div className="flex flex-wrap justify-center gap-5">
                 {SKILLS.map((skill) => (

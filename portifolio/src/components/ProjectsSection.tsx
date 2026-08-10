@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import { ArrowUpRight, X } from 'lucide-react';
 import { PROJECTS, type Project } from '../constants';
+import { useInView } from '../hooks/useInView';
 
 const ProjectsSection = () => {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+    const { ref, inView } = useInView<HTMLElement>();
 
     useEffect(() => {
         if (!selectedProject) return;
@@ -17,7 +19,13 @@ const ProjectsSection = () => {
     }, [selectedProject]);
 
     return (
-        <section id="projetos" className="preahvihear-regular mt-32 px-6 lg:px-20 max-w-7xl mx-auto">
+        <section
+            id="projetos"
+            ref={ref}
+            className={`preahvihear-regular mt-32 px-6 lg:px-20 max-w-7xl mx-auto transition-all duration-700 ${
+                inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+        >
             <h2 className="text-4xl font-bold text-white text-center mb-10">Projetos</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 {PROJECTS.map((project) => (

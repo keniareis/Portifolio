@@ -1,8 +1,17 @@
 import { Github, Linkedin } from 'lucide-react';
+import { useInView } from '../hooks/useInView';
 
 const ContactSection = () => {
+    const { ref, inView } = useInView<HTMLElement>();
+
     return (
-        <section id="contato" className="preahvihear-regular mt-32 px-6 lg:px-20 max-w-3xl mx-auto text-center">
+        <section
+            id="contato"
+            ref={ref}
+            className={`preahvihear-regular mt-32 px-6 lg:px-20 max-w-3xl mx-auto text-center transition-all duration-700 ${
+                inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+        >
             <h2 className="text-2xl font-semibold text-white mb-4">Vamos conversar!</h2>
             <p className="text-gray-300 text-sm leading-relaxed mb-4">
                 Busco oportunidades para integrar equipes colaborativas e atuar no desenvolvimento de
