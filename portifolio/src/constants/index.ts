@@ -42,7 +42,7 @@ export const PROJECTS: Project[] = [
         subtitle: "Plataforma",
         media: { type: "video", src: alumniVideo },
         tags: ["Java", "SpringBoot", "React"],
-        link: "https://github.com/Alumni-IFMA",
+        link: "https://alumni-academic-management-api.onrender.com",
     },
     {
         name: "Falta+",
