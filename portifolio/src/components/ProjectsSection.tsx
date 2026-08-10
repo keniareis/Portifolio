@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { ArrowUpRight, X } from 'lucide-react';
-import { PROJECTS, type Project } from '../constants';
+import { IN_PROGRESS_PROJECTS, PROJECTS, type Project } from '../constants';
 import { useInView } from '../hooks/useInView';
+import Reveal from './Reveal';
 
 const ProjectsSection = () => {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -28,9 +30,10 @@ const ProjectsSection = () => {
         >
             <h2 className="text-4xl font-bold text-white text-center mb-10">Projetos</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                {PROJECTS.map((project) => (
-                    <div
+                {PROJECTS.map((project, index) => (
+                    <Reveal
                         key={project.name}
+                        delayMs={index * 80}
                         className="border border-purple-900/50 rounded-lg p-5 flex flex-col justify-between bg-neutral-900/40"
                     >
                         <button
@@ -77,11 +80,27 @@ const ProjectsSection = () => {
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </Reveal>
                 ))}
             </div>
 
-            {selectedProject && (
+            <div className="mt-10 flex flex-col items-center gap-3">
+                <p className="text-xs uppercase tracking-wide text-gray-500">🚧 Em andamento</p>
+                <div className="flex flex-wrap justify-center gap-3">
+                    {IN_PROGRESS_PROJECTS.map((project, index) => (
+                        <Reveal
+                            key={project.name}
+                            delayMs={index * 80}
+                            className="flex items-center gap-2 border border-purple-900/50 rounded-full px-4 py-2 bg-neutral-900/40"
+                        >
+                            <span className="text-sm text-white font-semibold">{project.name}</span>
+                            <span className="text-xs text-gray-400">{project.tags.join(' · ')}</span>
+                        </Reveal>
+                    ))}
+                </div>
+            </div>
+
+            {selectedProject && createPortal(
                 <div
                     className="fixed inset-0 z-[100] bg-black/80 flex items-center justify-center p-6"
                     onClick={() => setSelectedProject(null)}
@@ -108,7 +127,8 @@ const ProjectsSection = () => {
                         )}
                         <p className="text-white text-center mt-4 font-semibold">{selectedProject.name}</p>
                     </div>
-                </div>
+                </div>,
+                document.body
             )}
         </section>
     );

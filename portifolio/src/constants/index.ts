@@ -60,6 +60,13 @@ export const PROJECTS: Project[] = [
     },
 ];
 
+export type InProgressProject = { name: string; tags: string[] };
+
+export const IN_PROGRESS_PROJECTS: InProgressProject[] = [
+    { name: "LabTrack", tags: ["Java", "React", "React Native"] },
+    { name: "Plataforma de Documentação", tags: ["Java", "React"] },
+];
+
 export type Skill = { name: string; icon: string };
 
 export const SKILLS: Skill[] = [

@@ -1,5 +1,6 @@
 import { Github, Linkedin } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
+import Reveal from './Reveal';
 
 const ContactSection = () => {
     const { ref, inView } = useInView<HTMLElement>();
@@ -12,16 +13,18 @@ const ContactSection = () => {
                 inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
         >
-            <h2 className="text-2xl font-semibold text-white mb-4">Vamos conversar!</h2>
-            <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                Busco oportunidades para integrar equipes colaborativas e atuar no desenvolvimento de
-                soluções de software com impacto real. Estou aberta a novas oportunidades, projetos e
-                parcerias. Se quiser trocar ideias ou discutir uma possível colaboração, vamos nos conectar!
-            </p>
-            <a href="mailto:keniaolivereis@gmail.com" className="text-white hover:text-purple-400 transition">
-                keniaolivereis@gmail.com
-            </a>
-            <div className="flex justify-center items-center gap-4 mt-6">
+            <Reveal>
+                <h2 className="text-2xl font-semibold text-white mb-4">Vamos conversar!</h2>
+                <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                    Busco oportunidades para integrar equipes colaborativas e atuar no desenvolvimento de
+                    soluções de software com impacto real. Estou aberta a novas oportunidades, projetos e
+                    parcerias. Se quiser trocar ideias ou discutir uma possível colaboração, vamos nos conectar!
+                </p>
+                <a href="mailto:keniaolivereis@gmail.com" className="text-white hover:text-purple-400 transition">
+                    keniaolivereis@gmail.com
+                </a>
+            </Reveal>
+            <Reveal delayMs={120} className="flex justify-center items-center gap-4 mt-6">
                 <a
                     href="https://www.linkedin.com/in/keniareis/"
                     target="_blank"
@@ -38,7 +41,7 @@ const ContactSection = () => {
                 >
                     <Github size={28} />
                 </a>
-            </div>
+            </Reveal>
         </section>
     );
 };
