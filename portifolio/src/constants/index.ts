@@ -12,9 +12,7 @@ import gitIcon from '../assets/git.png';
 import sdcVideo from '../assets/Sdc.mp4';
 import alumniVideo from '../assets/alumni.mp4';
 import faltamaisVideo from '../assets/faltamais.mp4';
-import emailImg from '../assets/email.png';
 import prosperImg from '../assets/prosper.png';
-import chessSystemImg from '../assets/chessSystem.png';
 
 export const NAV_LINKS = [
     { label: "Sobre", href: "#sobre" },
@@ -54,25 +52,11 @@ export const PROJECTS: Project[] = [
         link: "https://github.com/keniareis/Falta_mais",
     },
     {
-        name: "Email-Service",
-        subtitle: "Uber Challenge",
-        media: { type: "image", src: emailImg },
-        tags: ["Java", "Spring boot", "AWS"],
-        link: "https://github.com/keniareis/Email-Service-Uber-Challenge",
-    },
-    {
         name: "Prosper App",
         subtitle: "Gerenciador",
         media: { type: "image", src: prosperImg },
         tags: ["Dart", "Flutter", "Firebase"],
         link: "https://github.com/hiagozavarize/prosper_app",
-    },
-    {
-        name: "Chess System",
-        subtitle: "Xadrez no Terminal",
-        media: { type: "image", src: chessSystemImg },
-        tags: ["Java"],
-        link: "https://github.com/keniareis/Chess-System",
     },
 ];
 
