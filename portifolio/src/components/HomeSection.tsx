@@ -1,13 +1,30 @@
 import foto from '../assets/foto.jpg'
 import { FileText } from 'lucide-react'
+import { useEffect, useState } from 'react'
+
+const GREETING = "Olá! Sou a "
+const NAME = "Kenia Reis"
+const FULL_TEXT = GREETING + NAME
 
 const HomeSection = () => {
-  return (        
+  const [typedLength, setTypedLength] = useState(0)
+
+  useEffect(() => {
+    if (typedLength >= FULL_TEXT.length) return
+    const timeout = setTimeout(() => setTypedLength((prev) => prev + 1), 70)
+    return () => clearTimeout(timeout)
+  }, [typedLength])
+
+  const typedGreeting = FULL_TEXT.slice(0, typedLength).slice(0, GREETING.length)
+  const typedName = FULL_TEXT.slice(0, typedLength).slice(GREETING.length)
+
+  return (
     <section id="sobre" className="preahvihear-regular flex items-center justify-between gap-12 mt-20 px-6 lg:px-20 max-w-7xl mx-auto">
       <div className="max-w-xl">
         <p className="text-base mb-2">
-            Olá! Sou a{' '}
-            <span className="text-purple-400 font-semibold">Kenia Reis</span>
+            {typedGreeting}
+            <span className="text-purple-400 font-semibold">{typedName}</span>
+            <span className="animate-pulse">|</span>
         </p>
         <h1 className="text-5xl font-bold text-white mb-6">
             Desenvolvedora de Software
