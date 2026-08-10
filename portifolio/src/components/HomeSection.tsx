@@ -3,7 +3,7 @@ import { FileText } from 'lucide-react'
 
 const HomeSection = () => {
   return (        
-    <section id="sobre" className="preahvihear-regular flex items-center gap-12 mt-20 px-6 lg:px-20 max-w-7xl mx-auto">
+    <section id="sobre" className="preahvihear-regular flex items-center justify-between gap-12 mt-20 px-6 lg:px-20 max-w-7xl mx-auto">
       <div className="max-w-xl">
         <p className="text-base mb-2">
             Olá! Sou a{' '}
@@ -28,7 +28,7 @@ const HomeSection = () => {
           </a>
         </div>
       </div>
-      <div className="hidden lg:flex w-72 h-72 rounded-full bg-purple-900/60 overflow-hidden items-center justify-center">
+      <div className="hidden lg:flex flex-shrink-0 w-96 h-96 rounded-full bg-purple-900/60 overflow-hidden items-center justify-center">
         <img src={foto} />
       </div>
     </section>
