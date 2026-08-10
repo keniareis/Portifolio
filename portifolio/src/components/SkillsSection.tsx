@@ -1,9 +1,11 @@
 import { SKILLS } from '../constants';
 import { useInView } from '../hooks/useInView';
+import { useLanguage } from '../i18n/useLanguage';
 import Reveal from './Reveal';
 
 const SkillsSection = () => {
     const { ref, inView } = useInView<HTMLElement>();
+    const { t } = useLanguage();
 
     return (
         <section
@@ -13,7 +15,7 @@ const SkillsSection = () => {
                 inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
         >
-            <h2 className="text-4xl font-bold text-white mb-10">Habilidades</h2>
+            <h2 className="text-4xl font-bold text-white mb-10">{t.skills.heading}</h2>
             <div className="flex flex-wrap justify-center gap-5">
                 {SKILLS.map((skill, index) => (
                     <Reveal

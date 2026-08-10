@@ -15,15 +15,15 @@ import faltamaisVideo from '../assets/faltamais.mp4';
 import prosperImg from '../assets/prosper.png';
 
 export const NAV_LINKS = [
-    { label: "Sobre", href: "#sobre" },
-    { label: "Projetos", href: "#projetos" },
-    { label: "Habilidades", href: "#habilidades" },
-    { label: "Contato", href: "#contato" },
-]
+    { key: "sobre", href: "#sobre" },
+    { key: "projetos", href: "#projetos" },
+    { key: "habilidades", href: "#habilidades" },
+    { key: "contato", href: "#contato" },
+] as const;
 
 export type Project = {
     name: string;
-    subtitle: string;
+    subtitle: { pt: string; en: string };
     media: { type: "video" | "image"; src: string };
     tags: string[];
     link: string;
@@ -32,39 +32,42 @@ export type Project = {
 export const PROJECTS: Project[] = [
     {
         name: "Sabor de Casa",
-        subtitle: "Bakery Flow",
+        subtitle: { pt: "Fluxo de Padaria", en: "Bakery Flow" },
         media: { type: "video", src: sdcVideo },
         tags: ["Flutter", "Dart", "SQLite"],
         link: "https://github.com/keniareis/app-BakeryFlow",
     },
     {
         name: "Alumni IFMA",
-        subtitle: "Plataforma",
+        subtitle: { pt: "Plataforma Acadêmica", en: "Academic Platform" },
         media: { type: "video", src: alumniVideo },
         tags: ["Java", "SpringBoot", "React"],
         link: "https://alumni-academic-management-api.onrender.com",
     },
     {
         name: "Falta+",
-        subtitle: "Class Control",
+        subtitle: { pt: "Controle de Aulas", en: "Class Control" },
         media: { type: "video", src: faltamaisVideo },
         tags: ["NodeJs", "Express", "html/css"],
         link: "https://github.com/keniareis/Falta_mais",
     },
     {
         name: "Prosper App",
-        subtitle: "Gerenciador",
+        subtitle: { pt: "Gerenciador de Dívidas", en: "Debt Manager" },
         media: { type: "image", src: prosperImg },
         tags: ["Dart", "Flutter", "Firebase"],
         link: "https://github.com/hiagozavarize/prosper_app",
     },
 ];
 
-export type InProgressProject = { name: string; tags: string[] };
+export type InProgressProject = { name: { pt: string; en: string }; tags: string[] };
 
 export const IN_PROGRESS_PROJECTS: InProgressProject[] = [
-    { name: "LabTrack", tags: ["Java", "React", "React Native"] },
-    { name: "Plataforma de Documentação", tags: ["Java", "React"] },
+    { name: { pt: "LabTrack", en: "LabTrack" }, tags: ["Java", "React", "React Native"] },
+    {
+        name: { pt: "Plataforma de Documentação", en: "Documentation Platform" },
+        tags: ["Java", "React"],
+    },
 ];
 
 export type Skill = { name: string; icon: string };

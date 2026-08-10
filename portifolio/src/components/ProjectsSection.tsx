@@ -3,11 +3,13 @@ import { createPortal } from 'react-dom';
 import { ArrowUpRight, X } from 'lucide-react';
 import { IN_PROGRESS_PROJECTS, PROJECTS, type Project } from '../constants';
 import { useInView } from '../hooks/useInView';
+import { useLanguage } from '../i18n/useLanguage';
 import Reveal from './Reveal';
 
 const ProjectsSection = () => {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
     const { ref, inView } = useInView<HTMLElement>();
+    const { lang, t } = useLanguage();
 
     useEffect(() => {
         if (!selectedProject) return;
@@ -28,7 +30,7 @@ const ProjectsSection = () => {
                 inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
         >
-            <h2 className="text-4xl font-bold text-white text-center mb-10">Projetos</h2>
+            <h2 className="text-4xl font-bold text-white text-center mb-10">{t.projects.heading}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 {PROJECTS.map((project, index) => (
                     <Reveal
@@ -50,14 +52,14 @@ const ProjectsSection = () => {
                             )}
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition flex items-center justify-center">
                                 <span className="opacity-0 group-hover:opacity-100 transition text-white text-sm font-semibold">
-                                    Ver imagem
+                                    {t.projects.verImagem}
                                 </span>
                             </div>
                         </button>
                         <div className="flex items-center justify-between">
                             <div>
                                 <h4 className="text-sm font-bold text-white">{project.name}</h4>
-                                <p className="text-sm text-gray-400">{project.subtitle}</p>
+                                <p className="text-sm text-gray-400">{project.subtitle[lang]}</p>
                             </div>
                             <div className="flex flex-col items-end gap-2">
                                 <div className="flex flex-wrap justify-end gap-1">
@@ -76,7 +78,7 @@ const ProjectsSection = () => {
                                     rel="noreferrer"
                                     className="flex items-center gap-1 text-xs font-semibold text-purple-400 hover:text-purple-300 transition"
                                 >
-                                    Ver mais <ArrowUpRight size={14} />
+                                    {t.projects.verMais} <ArrowUpRight size={14} />
                                 </a>
                             </div>
                         </div>
@@ -85,15 +87,15 @@ const ProjectsSection = () => {
             </div>
 
             <div className="mt-10 flex flex-col items-center gap-3">
-                <p className="text-xs uppercase tracking-wide text-gray-500">🚧 Em andamento</p>
+                <p className="text-xs uppercase tracking-wide text-gray-500">🚧 {t.projects.emAndamento}</p>
                 <div className="flex flex-wrap justify-center gap-3">
                     {IN_PROGRESS_PROJECTS.map((project, index) => (
                         <Reveal
-                            key={project.name}
+                            key={project.name.en}
                             delayMs={index * 80}
                             className="flex items-center gap-2 border border-purple-900/50 rounded-full px-4 py-2 bg-neutral-900/40"
                         >
-                            <span className="text-sm text-white font-semibold">{project.name}</span>
+                            <span className="text-sm text-white font-semibold">{project.name[lang]}</span>
                             <span className="text-xs text-gray-400">{project.tags.join(' · ')}</span>
                         </Reveal>
                     ))}

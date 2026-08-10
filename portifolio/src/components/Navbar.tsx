@@ -2,10 +2,12 @@ import { Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import logo from '../assets/logo.svg';
 import { NAV_LINKS } from '../constants';
+import { useLanguage } from '../i18n/useLanguage';
 
 const Navbar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [hidden, setHidden] = useState(false);
+    const { lang, toggleLang, t } = useLanguage();
 
     const toggleMobileMenu = () => {
         setMobileMenuOpen((prev) => !prev);
@@ -39,12 +41,18 @@ const Navbar = () => {
                     <ul className="hidden lg:flex ml-14 space-x-12">
                         {NAV_LINKS.map((link) => (
                             <li key={link.href}>
-                                <a href={link.href}>{link.label}</a>
+                                <a href={link.href}>{t.nav[link.key]}</a>
                             </li>
                         ))}
                     </ul>
-                    <div className="hidden lg:flex justify-center space-x-12 items-center">
-                        <a href="#" className='bg-gradient-to-r from-purple-500 to-purple-800 py-2 px-3 rounded-md'>Currículo</a>
+                    <div className="hidden lg:flex justify-center space-x-6 items-center">
+                        <button
+                            onClick={toggleLang}
+                            className="text-xs border border-neutral-600 rounded-md px-2 py-1 hover:border-purple-400 transition"
+                        >
+                            {lang === 'pt' ? 'EN' : 'PT'}
+                        </button>
+                        <a href="#" className='bg-gradient-to-r from-purple-500 to-purple-800 py-2 px-3 rounded-md'>{t.nav.curriculo}</a>
                     </div>
                     <div className="lg:hidden md:flex flex-col justify-end">
                         <button onClick={toggleMobileMenu}>
@@ -55,14 +63,20 @@ const Navbar = () => {
                 {mobileMenuOpen && (
                     <div className="bg-[#300049] fixed right-0 z-20 w-full p-12 flex flex-col items-center lg:hidden">
                         <ul>
-                            {NAV_LINKS.map((item, index) => (
-                                <li key={index} className="py-2">
-                                    <a href={item.href}>{item.label}</a>
+                            {NAV_LINKS.map((item) => (
+                                <li key={item.href} className="py-2">
+                                    <a href={item.href}>{t.nav[item.key]}</a>
                                 </li>
                             ))}
                         </ul>
-                        <div className="flex space-x-6">
-                            <a href="#" className='bg-gradient-to-r from-purple-500 to-purple-800 py-2 px-3 border rounded-md'>Currículo</a>
+                        <div className="flex items-center space-x-6">
+                            <button
+                                onClick={toggleLang}
+                                className="text-xs border border-neutral-600 rounded-md px-2 py-1 hover:border-purple-400 transition"
+                            >
+                                {lang === 'pt' ? 'EN' : 'PT'}
+                            </button>
+                            <a href="#" className='bg-gradient-to-r from-purple-500 to-purple-800 py-2 px-3 border rounded-md'>{t.nav.curriculo}</a>
                         </div>
                     </div>
                 )}

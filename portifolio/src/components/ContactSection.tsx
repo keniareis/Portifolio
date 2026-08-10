@@ -1,9 +1,11 @@
 import { Github, Linkedin } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
+import { useLanguage } from '../i18n/useLanguage';
 import Reveal from './Reveal';
 
 const ContactSection = () => {
     const { ref, inView } = useInView<HTMLElement>();
+    const { t } = useLanguage();
 
     return (
         <section
@@ -14,11 +16,9 @@ const ContactSection = () => {
             }`}
         >
             <Reveal>
-                <h2 className="text-2xl font-semibold text-white mb-4">Vamos conversar!</h2>
+                <h2 className="text-2xl font-semibold text-white mb-4">{t.contact.heading}</h2>
                 <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                    Busco oportunidades para integrar equipes colaborativas e atuar no desenvolvimento de
-                    soluções de software com impacto real. Estou aberta a novas oportunidades, projetos e
-                    parcerias. Se quiser trocar ideias ou discutir uma possível colaboração, vamos nos conectar!
+                    {t.contact.bio}
                 </p>
                 <a href="mailto:keniaolivereis@gmail.com" className="text-white hover:text-purple-400 transition">
                     keniaolivereis@gmail.com

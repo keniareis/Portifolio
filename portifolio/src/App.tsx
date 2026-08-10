@@ -4,10 +4,11 @@ import ProjectsSection from "./components/ProjectsSection"
 import SkillsSection from "./components/SkillsSection"
 import ContactSection from "./components/ContactSection"
 import Footer from "./components/Footer"
+import { LanguageProvider } from "./i18n/LanguageContext"
 
 const App = () => {
   return (
-    <>
+    <LanguageProvider>
       <Navbar/>
       <div>
         <HomeSection/>
@@ -16,7 +17,7 @@ const App = () => {
         <ContactSection/>
       </div>
       <Footer/>
-    </>
+    </LanguageProvider>
   )
 }
 
