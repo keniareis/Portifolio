@@ -95,7 +95,12 @@ const ProjectsSection = () => {
                             delayMs={index * 80}
                             className="flex items-center gap-2 border border-purple-900/50 rounded-full px-4 py-2 bg-neutral-900/40"
                         >
-                            <span className="text-sm text-white font-semibold">{project.name[lang]}</span>
+                            <span className="text-sm text-white font-semibold">
+                                {project.name[lang]}
+                                {project.subtitle && (
+                                    <span className="text-gray-400 font-normal"> · {project.subtitle[lang]}</span>
+                                )}
+                            </span>
                             <span className="text-xs text-gray-400">{project.tags.join(' · ')}</span>
                         </Reveal>
                     ))}

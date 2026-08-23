@@ -12,7 +12,7 @@ import gitIcon from '../assets/git.png';
 import sdcVideo from '../assets/Sdc.mp4';
 import alumniVideo from '../assets/alumni.mp4';
 import faltamaisVideo from '../assets/faltamais.mp4';
-import prosperImg from '../assets/prosper.png';
+import planningPokerVideo from '../assets/planningPoker.mp4';
 
 export const NAV_LINKS = [
     { key: "sobre", href: "#sobre" },
@@ -31,18 +31,25 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
     {
-        name: "Sabor de Casa",
-        subtitle: { pt: "Fluxo de Padaria", en: "Bakery Flow" },
-        media: { type: "video", src: sdcVideo },
-        tags: ["Flutter", "Dart", "SQLite"],
-        link: "https://github.com/keniareis/app-BakeryFlow",
-    },
-    {
         name: "Alumni IFMA",
         subtitle: { pt: "Plataforma Acadêmica", en: "Academic Platform" },
         media: { type: "video", src: alumniVideo },
         tags: ["Java", "SpringBoot", "React"],
         link: "https://alumni-academic-management-api.onrender.com",
+    },
+    {
+        name: "Planning Poker",
+        subtitle: { pt: "Técnica de estimativa ágil", en: "Agile estimation technique" },
+        media: { type: "video", src: planningPokerVideo },
+        tags: ["React", "Tailwind", "Vite", "Firebase"],
+        link: "https://planning-poker-987c7.web.app/",
+    },
+    {
+        name: "Sabor de Casa",
+        subtitle: { pt: "Fluxo de Padaria", en: "Bakery Flow" },
+        media: { type: "video", src: sdcVideo },
+        tags: ["Flutter", "Dart", "SQLite"],
+        link: "https://github.com/keniareis/app-BakeryFlow",
     },
     {
         name: "Falta+",
@@ -51,21 +58,19 @@ export const PROJECTS: Project[] = [
         tags: ["NodeJs", "Express", "html/css"],
         link: "https://github.com/keniareis/Falta_mais",
     },
-    {
-        name: "Prosper App",
-        subtitle: { pt: "Gerenciador de Dívidas", en: "Debt Manager" },
-        media: { type: "image", src: prosperImg },
-        tags: ["Dart", "Flutter", "Firebase"],
-        link: "https://github.com/hiagozavarize/prosper_app",
-    },
 ];
 
-export type InProgressProject = { name: { pt: string; en: string }; tags: string[] };
+export type InProgressProject = {
+    name: { pt: string; en: string };
+    subtitle?: { pt: string; en: string };
+    tags: string[];
+};
 
 export const IN_PROGRESS_PROJECTS: InProgressProject[] = [
     { name: { pt: "LabTrack", en: "LabTrack" }, tags: ["Java", "React", "React Native"] },
     {
-        name: { pt: "Plataforma de Documentação", en: "Documentation Platform" },
+        name: { pt: "Weaver", en: "Weaver" },
+        subtitle: { pt: "Plataforma de Documentação", en: "Documentation Platform" },
         tags: ["Java", "React"],
     },
 ];

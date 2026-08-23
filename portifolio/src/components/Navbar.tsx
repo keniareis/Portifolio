@@ -65,7 +65,7 @@ const Navbar = () => {
                         <ul>
                             {NAV_LINKS.map((item) => (
                                 <li key={item.href} className="py-2">
-                                    <a href={item.href}>{t.nav[item.key]}</a>
+                                    <a href={item.href} onClick={() => setMobileMenuOpen(false)}>{t.nav[item.key]}</a>
                                 </li>
                             ))}
                         </ul>
