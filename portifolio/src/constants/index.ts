@@ -41,7 +41,7 @@ export const PROJECTS: Project[] = [
         name: "Planning Poker",
         subtitle: { pt: "Técnica de estimativa ágil", en: "Agile estimation technique" },
         media: { type: "video", src: planningPokerVideo },
-        tags: ["React", "Tailwind", "Vite", "Firebase"],
+        tags: ["React", "TypeScript", "Vite", "Firebase"],
         link: "https://planning-poker-987c7.web.app/",
     },
     {
